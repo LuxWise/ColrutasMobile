@@ -1,6 +1,6 @@
 import {Text, StyleSheet, View, SafeAreaView} from 'react-native';
 import React, {Component} from 'react';
-import TopMenu from '../../containers/TopMenu';
+import TopMenu from '../../layout/TopMenu';
 
 const Chat = ({navigation}) => {
   return (

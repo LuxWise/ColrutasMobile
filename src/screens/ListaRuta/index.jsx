@@ -11,7 +11,7 @@ import CustomReturn from '../../components/customReturn';
 import ItemsList from '../../components/ItemsList';
 import user1 from '../../assets/user1.png';
 import user2 from '../../assets/user2.png';
-import TopMenu from '../../containers/TopMenu';
+import TopMenu from '../../layout/TopMenu';
 
 const ListaRuta = ({navigation}) => {
   useEffect(() => {
@@ -45,37 +45,37 @@ const ListaRuta = ({navigation}) => {
           <ItemsList
             img={user1}
             text="Emanuel Gonzalez"
-            text2="Colegio Privado"
+            acudientes="Fabian Gonzalez"
             text3="donde sea"
           />
           <ItemsList
             img={user1}
             text="David Alvarez"
-            text2="Colegio Privado"
+            acudientes="Felipe Alvarez"
             text3="donde sea"
           />
           <ItemsList
             img={user2}
-            text="Sofia Lopez"
-            text2="Colegio Privado"
+            text="Juan David Lopez"
+            acudientes="Sofia Rincon"
             text3="donde sea"
           />
           <ItemsList
             img={user2}
             text="Emilia Corredor"
-            text2="Colegio Privado"
+            acudientes="Daniela Martinez"
             text3="donde sea"
           />
           <ItemsList
             img={user1}
             text="Felipe Muñoz"
-            text2="Colegio Privado"
+            acudientes="Alejandro Muñoz"
             text3="donde sea"
           />
           <ItemsList
             img={user1}
             text="Miguel Rincon"
-            text2="Colegio Privado"
+            acudientes="Pedro Rincon"
             text3="donde sea"
           />
         </View>

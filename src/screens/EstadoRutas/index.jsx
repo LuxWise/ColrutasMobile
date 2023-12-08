@@ -1,16 +1,17 @@
 import {
-  StyleSheet,
-  ScrollView,
-  View,
   StatusBar,
+  StyleSheet,
+  View,
+  ScrollView,
   BackHandler,
   SafeAreaView,
 } from 'react-native';
 import React, {useEffect} from 'react';
 import CustomReturn from '../../components/customReturn';
 import ItemsList from '../../components/ItemsList';
-import ruta from '../../assets/ruta.png';
-import TopMenu from '../../containers/TopMenu';
+import user1 from '../../assets/user1.png';
+import user2 from '../../assets/user2.png';
+import TopMenu from '../../layout/TopMenu';
 
 const EstadoRutas = ({navigation}) => {
   useEffect(() => {
@@ -38,13 +39,45 @@ const EstadoRutas = ({navigation}) => {
         hidden={false}
         backgroundColor="#0066CC"
       />
-      <CustomReturn icon="calendar" onPress={redirict} text="Estado de rutas" />
-
-      <ScrollView>
-        <View style={{padding: 20}}>
-          <ItemsList img={ruta} text="Ruta 161" text2="tal" text3="donde sea" />
-          <ItemsList img={ruta} text="Ruta 262" text2="tal" text3="donde sea" />
-          <ItemsList img={ruta} text="Ruta 392" text2="tal" text3="donde sea" />
+      <CustomReturn icon="clipboard" onPress={redirict} text="Lista de rutas" />
+      <ScrollView style={{width: '100%'}}>
+        <View style={{padding: 20, alignItems: 'center'}}>
+          <ItemsList
+            img={user1}
+            text="Emanuel Gonzalez"
+            acudientes="Fabian Gonzalez"
+            text3="donde sea"
+          />
+          <ItemsList
+            img={user1}
+            text="David Alvarez"
+            acudientes="Felipe Alvarez"
+            text3="donde sea"
+          />
+          <ItemsList
+            img={user2}
+            text="Juan David Lopez"
+            acudientes="Sofia Rincon"
+            text3="donde sea"
+          />
+          <ItemsList
+            img={user2}
+            text="Emilia Corredor"
+            acudientes="Daniela Martinez"
+            text3="donde sea"
+          />
+          <ItemsList
+            img={user1}
+            text="Felipe Muñoz"
+            acudientes="Alejandro Muñoz"
+            text3="donde sea"
+          />
+          <ItemsList
+            img={user1}
+            text="Miguel Rincon"
+            acudientes="Pedro Rincon"
+            text3="donde sea"
+          />
         </View>
       </ScrollView>
     </SafeAreaView>

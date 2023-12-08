@@ -1,17 +1,27 @@
-import {StyleSheet, Text, View, Pressable} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import Entypo from 'react-native-vector-icons/Entypo';
 import React from 'react';
+import Menu from '../components/Menu';
 
 const TopMenu = ({navigation}) => {
-  const redirect = () => {
-    navigation.replace('Menu');
-  };
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
   return (
-    <Pressable onPress={redirect} style={styles.container}>
-      <Icon name="menu" size={35} color="#0ea5e9" />
+    <View style={styles.container}>
+      <Icon
+        onPress={() => setIsMenuOpen(!isMenuOpen)}
+        name="menu"
+        size={35}
+        color="#0ea5e9"
+      />
       <Entypo name="notification" size={30} color="#0ea5e9" />
-    </Pressable>
+      <Menu
+        navigation={navigation}
+        isMenuOpen={isMenuOpen}
+        setIsMenuOpen={setIsMenuOpen}
+      />
+    </View>
   );
 };
 

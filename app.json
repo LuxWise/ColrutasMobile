@@ -1,4 +1,11 @@
 {
   "name": "ColrutasMobile",
-  "displayName": "ColrutasMobile"
+  "displayName": "ColrutasMobile",
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "57c4a82c-2f4d-475c-b6b4-32262784314b"
+      }
+    }
+  }
 }

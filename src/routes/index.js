@@ -3,10 +3,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import ButtomTabs from '../containers/ButtomTabs';
 import Rutas from '../screens/Rutas';
 import ListaRuta from '../screens/ListaRuta';
-import EstadoRutas from '../screens/EstadoRutas';
+import EstadoRutas from '../screens/ListaRutas';
 import Login from '../screens/login';
-import Menu from '../screens/Menu';
-import TopMenu from '../containers/TopMenu';
+import ListaRutas from '../screens/ListaRutas';
 
 const Stack = createStackNavigator();
 
@@ -39,10 +38,11 @@ const Routes = () => {
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Menu"
-        component={Menu}
+        name="ListaRutas"
+        component={ListaRutas}
         options={{ headerShown: false }}
       />
+
     </Stack.Navigator>
   );
 };

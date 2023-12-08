@@ -8,7 +8,7 @@ import {
   useColorScheme,
 } from 'react-native';
 import ItemsHome from '../../components/ItemsHome';
-import TopMenu from '../../containers/TopMenu';
+import TopMenu from '../../layout/TopMenu';
 
 const Dashboard = ({navigation}) => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -39,7 +39,7 @@ const Dashboard = ({navigation}) => {
         text2="Consulta de rutas programadas"
       />
       <ItemsHome
-        direction="EstadoRutas"
+        direction="ListaRutas"
         navigation={navigation}
         icon="calendar"
         text="Estado de rutas"
