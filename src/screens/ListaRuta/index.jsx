@@ -6,17 +6,27 @@ import {
   BackHandler,
   SafeAreaView,
 } from 'react-native';
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import CustomReturn from '../../components/customReturn';
 import ItemsList from '../../components/ItemsList';
 import user1 from '../../assets/user1.png';
 import user2 from '../../assets/user2.png';
 import TopMenu from '../../layout/TopMenu';
+import axios from 'axios';
 
 const ListaRuta = ({navigation}) => {
+  const [data, setData] = useState([]);
+
   useEffect(() => {
     BackHandler.addEventListener('hardwareBackPress', handleBackButton);
-
+    axios
+      .get('http://10.0.2.2:8080/alumnos/')
+      .then(response => {
+        setData(response.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
     return () => {
       BackHandler.removeEventListener('hardwareBackPress', handleBackButton);
     };
@@ -42,42 +52,17 @@ const ListaRuta = ({navigation}) => {
       <CustomReturn icon="clipboard" onPress={redirict} text="Lista de rutas" />
       <ScrollView style={{width: '100%'}}>
         <View style={{padding: 20, alignItems: 'center'}}>
-          <ItemsList
-            img={user1}
-            text="Emanuel Gonzalez"
-            acudientes="Fabian Gonzalez"
-            text3="donde sea"
-          />
-          <ItemsList
-            img={user1}
-            text="David Alvarez"
-            acudientes="Felipe Alvarez"
-            text3="donde sea"
-          />
-          <ItemsList
-            img={user2}
-            text="Juan David Lopez"
-            acudientes="Sofia Rincon"
-            text3="donde sea"
-          />
-          <ItemsList
-            img={user2}
-            text="Emilia Corredor"
-            acudientes="Daniela Martinez"
-            text3="donde sea"
-          />
-          <ItemsList
-            img={user1}
-            text="Felipe Muñoz"
-            acudientes="Alejandro Muñoz"
-            text3="donde sea"
-          />
-          <ItemsList
-            img={user1}
-            text="Miguel Rincon"
-            acudientes="Pedro Rincon"
-            text3="donde sea"
-          />
+          {data.map(item => (
+            <View key={item.id}>
+              <ItemsList
+                img={user1}
+                text={item.nombre}
+                acudientes={item.acudiente}
+                destino={item.direccionAlumno}
+                id={item.id}
+              />
+            </View>
+          ))}
         </View>
       </ScrollView>
     </SafeAreaView>

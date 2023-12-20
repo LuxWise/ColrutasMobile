@@ -2,7 +2,7 @@ import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import RutaDetail from '../RutaDetail';
 
-const ItemsRutas = ({img, text, recogida, destino}) => {
+const ItemsRutas = ({img, text, recogida, destino, id}) => {
   const [isDetailOpen, setIsDetailOpen] = React.useState(false);
 
   return (
@@ -20,8 +20,8 @@ const ItemsRutas = ({img, text, recogida, destino}) => {
       <RutaDetail
         isDetailOpen={isDetailOpen}
         setIsDetailOpen={setIsDetailOpen}
-        text={text}
-        recogida={recogida}
+        itemId={id}
+        img={img}
       />
     </Pressable>
   );

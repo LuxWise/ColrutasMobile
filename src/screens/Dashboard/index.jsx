@@ -35,15 +35,15 @@ const Dashboard = ({navigation}) => {
         direction="ListaRuta"
         navigation={navigation}
         icon="clipboard"
-        text="Lista de estudiantes"
-        text2="Consulta de rutas programadas"
+        text="Lista de alumnos"
+        text2="Consulta la lista de los alumnos"
       />
       <ItemsHome
         direction="ListaRutas"
         navigation={navigation}
         icon="calendar"
-        text="Estado de rutas"
-        text2="Consulta de rutas programadas"
+        text="Listado de rutas"
+        text2="Consulta la lista de los alumnos"
       />
     </SafeAreaView>
   );

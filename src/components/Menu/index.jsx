@@ -3,10 +3,16 @@ import Icon from 'react-native-vector-icons/FontAwesome6';
 import profile from '../../assets/ruta.png';
 import React from 'react';
 import ItemsMenu from '../itemsMenu';
+import * as Keychain from 'react-native-keychain';
 
 const Menu = ({setIsMenuOpen, isMenuOpen, navigation}) => {
-  const logout = () => {
-    navigation.replace('Login');
+  const logout = async () => {
+    try {
+      await Keychain.resetGenericPassword();
+      navigation.replace('Login');
+    } catch (error) {
+      console.error('Error al cerrar sesión:', error);
+    }
     return true;
   };
 

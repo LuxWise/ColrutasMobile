@@ -3,12 +3,12 @@ import Icon from 'react-native-vector-icons/FontAwesome6';
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 
-const RutaDetail = ({isDetailOpen, setIsDetailOpen, itemId, img}) => {
+const UserDetail = ({isDetailOpen, setIsDetailOpen, itemId, img}) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`http://10.0.2.2:8080/rutaDetail/${itemId}`)
+      .get(`http://10.0.2.2:8080/alumnosDetail/${itemId}`)
       .then(response => {
         setData(response.data);
       })
@@ -35,18 +35,21 @@ const RutaDetail = ({isDetailOpen, setIsDetailOpen, itemId, img}) => {
           <View style={styles.textContainer}>
             {data.map(item => (
               <View key={item.id}>
-                <Text style={styles.nameText}>Ruta: {item.nombre}</Text>
+                <Text style={styles.nameText}>{item.nombre}</Text>
               </View>
             ))}
           </View>
           <View style={styles.infoContainer}>
             {data.map(item => (
               <View key={item.id}>
-                <Text style={styles.info}>Conductor: {item.conductor}</Text>
-                <Text style={styles.info}>Origen: {item.origen}</Text>
-                <Text style={styles.info}>Placa: {item.placa}</Text>
-                <Text style={styles.info}>Destino: {item.destino}</Text>
-                <Text style={styles.info}>Monitor: {item.monitor}</Text>
+                <Text style={styles.info}>Acudiente: {item.acudiente}</Text>
+                <Text style={styles.info}>Documento: {item.documento}</Text>
+                <Text style={styles.info}>EPS: {item.eps}</Text>
+                <Text style={styles.info}>Curso: {item.curso}</Text>
+                <Text style={styles.info}>Grado: {item.grado}</Text>
+                <Text style={styles.info}>
+                  Direccion: {item.direccionAlumno}
+                </Text>
               </View>
             ))}
           </View>
@@ -56,7 +59,7 @@ const RutaDetail = ({isDetailOpen, setIsDetailOpen, itemId, img}) => {
   );
 };
 
-export default RutaDetail;
+export default UserDetail;
 
 const styles = StyleSheet.create({
   container: {
