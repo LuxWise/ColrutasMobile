@@ -2,8 +2,7 @@
 
 buildscript {
     ext {
-        RNMapboxMapsUseV11 = true
-        RNMapboxMapsVersion = '10.6.0'        
+        RNMapboxMapsVersion = '11.0.0'
         buildToolsVersion = "33.0.0"
         minSdkVersion = 21
         compileSdkVersion = 33
